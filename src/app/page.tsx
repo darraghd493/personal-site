@@ -5,7 +5,7 @@ import MotionImage from "@/components/MotionImage";
 import ProjectCard from "@/components/ProjectCard";
 import { Project, ProjectType } from "@/Project";
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaYoutube, FaTwitter, FaGithub, FaDiscord, FaChevronDown } from "react-icons/fa6";
 
 const socials = [
