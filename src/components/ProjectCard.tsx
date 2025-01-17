@@ -7,7 +7,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div>
         {
           project.image && (
-            <Image src={project.image} className="object-cover w-full rounded-t-lg h-96 md:h-[16rem]
+            <Image unoptimized src={project.image} className="object-cover w-full rounded-t-lg h-96 md:h-[16rem]
             " width={512} height={512} alt="" />
           )
         }

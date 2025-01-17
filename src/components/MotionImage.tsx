@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
   function ExoticImageWrapper(props, ref) {
     // eslint-disable-next-line jsx-a11y/alt-text
-    return <Image {...props} ref={ref} />;
+    return <Image unoptimized {...props} ref={ref} />;
   }
 );
 
