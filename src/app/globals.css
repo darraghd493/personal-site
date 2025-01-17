@@ -4,18 +4,47 @@
 
 :root {
   --background: #ffffff;
+  --background-alpha: #ffffffaf;
   --foreground: #171717;
+  --foreground-alpha: #17171764;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --background-alpha: #0f0f0faf;
     --foreground: #ededed;
+    --foreground-alpha: #ededed64;
   }
+  
+  .bg-grid {
+    background-image: linear-gradient(to right, #3f3f3f12 1px, transparent 1px),
+      linear-gradient(to bottom, #3f3f3f12 1px, transparent 1px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+
+  background-image: linear-gradient(to right, #ffffff12 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff12 1px, transparent 1px);
+  background-size: 32px 32px;
+
+  z-index: -1;
+}
+
+.card {
+  background-color: var(--background-alpha);
+  border-color: var(--foreground-alpha);
 }
