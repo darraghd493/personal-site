@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <meta name="apple-mobile-web-app-title" content="darragh" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
         {children}
       </body>

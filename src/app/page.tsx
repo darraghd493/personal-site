@@ -1,6 +1,7 @@
 'use client';
 
 import Background from "@/components/Backgroud";
+import DarkModeButton from "@/components/DarkModeButtion";
 import MotionImage from "@/components/MotionImage";
 import ProjectCard from "@/components/ProjectCard";
 import { Project, ProjectType } from "@/Project";
@@ -118,9 +119,18 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.classList.add("dark");
+  }, []);
+
   return (
     <div>
       <Background />
+      <DarkModeButton style={{
+        position: "fixed",
+        top: "1rem",
+        right: "1rem",
+      }} />
       <main className="container mx-auto">
         {/* Hero */}
         <div className="flex flex-col gap-4 justify-center items-center h-screen">
@@ -138,7 +148,7 @@ export default function Home() {
             />
             <h1 className="text-6xl p-4">
               <motion.span
-                className="font-bold"
+                className="font-bold text-white"
                 initial={{
                   textShadow: "2px 2px 0 #078d70, 4px 4px 0 #98e8c1, 6px 6px 0 #ffffff, 8px 8px 0 #7bade2, 10px 10px 0 #3d1a78",
                 }}
@@ -155,10 +165,10 @@ export default function Home() {
                 darragh
               </motion.span>
               <br></br>
-              <span className="text-gray-400 text-shadow shadow-gray-600">.website</span>
+              <span className="text-shadow text-[#777] shadow-[#555] dark:text-gray-400 dark:shadow-gray-600">.website</span>
             </h1>
           </div>
-          <div className="flex gap-2 justify-center items-center text-gray-400">
+          <div className="flex gap-2 justify-center items-center dark:text-gray-400">
             {
               socials.map((social) => (
                 <a key={social.name} href={social.url} target="_blank" rel="noreferrer">
@@ -169,7 +179,7 @@ export default function Home() {
           </div>
           {/* Scroll down for more */}
           <motion.div
-              className="absolute bottom-4 animate-bounce"
+              className="absolute bottom-4 animate-bounce text-gray-300 dark:text-white"
               initial={{
                 opacity: 0,
               }}
@@ -206,7 +216,7 @@ export default function Home() {
           }}
         >
           <h2 className="text-4xl font-bold">About me</h2>
-          <p className="text-gray-400 text-center">
+          <p className="dark:text-gray-400 text-center">
             Hello! I&apos;m Darragh - a 16 year old student taking their A-Levels, including Computer Science. 
           </p>
         </motion.div>
@@ -231,7 +241,7 @@ export default function Home() {
           }}
         >
           <h2 className="text-4xl font-bold">Projects</h2>
-          <p className="text-gray-400 text-center">
+          <p className="dark:text-gray-400 text-center">
             Here are some of the projects I&apos;ve worked on.
           </p>
           <div className="flex flex-row gap-6 flex-wrap justify-center">
@@ -263,7 +273,7 @@ export default function Home() {
           }}
         >
           <h2 className="text-4xl font-bold">Contact</h2>
-          <p className="text-gray-400 text-center">
+          <p className="dark:text-gray-400 text-center">
             If you&apos;d like to contact me, you can do so through any of my socials:
           </p>
           {
@@ -273,7 +283,7 @@ export default function Home() {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-gray-400 flex gap-2 items-center"
+                className="dark:text-gray-400 flex gap-2 items-center"
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{
                   opacity: 1,

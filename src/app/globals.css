@@ -3,24 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --background-alpha: #ffffffaf;
-  --foreground: #171717;
+  --background: #e9e9e9;
+  --background-alpha: #e9e9e9af;
+  --foreground: #444444;
   --foreground-alpha: #17171764;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --background-alpha: #0f0f0faf;
-    --foreground: #ededed;
-    --foreground-alpha: #ededed64;
-  }
-  
-  .bg-grid {
-    background-image: linear-gradient(to right, #3f3f3f12 1px, transparent 1px),
-      linear-gradient(to bottom, #3f3f3f12 1px, transparent 1px);
-  }
+.dark {
+  --background: #0a0a0a;
+  --background-alpha: #0f0f0faf;
+  --foreground: #ededed;
+  --foreground-alpha: #ededed64;
 }
 
 html {
@@ -37,11 +30,16 @@ body {
   position: fixed;
   inset: 0;
 
-  background-image: linear-gradient(to right, #ffffff12 1px, transparent 1px),
-    linear-gradient(to bottom, #ffffff12 1px, transparent 1px);
+  background-image: linear-gradient(to right, #22222212 1px, transparent 1px),
+    linear-gradient(to bottom, #22222212 1px, transparent 1px);
   background-size: 32px 32px;
 
   z-index: -1;
+}
+
+.dark .bg-grid {
+  background-image: linear-gradient(to right, #ffffff08 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
 }
 
 .card {
