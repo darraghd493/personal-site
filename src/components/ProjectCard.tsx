@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </p>
 
           <p><span className="font-bold">Created:</span> <span className="text-gray-400">{project.date}</span></p>
-          <p><span>Type:</span> <span className="text-gray-400">{project.type}</span></p>
+          <p><span className="font-bold">Type:</span> <span className="text-gray-400">{project.type}</span></p>
           
           {
             project.info.languages && (
