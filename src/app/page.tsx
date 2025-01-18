@@ -323,6 +323,14 @@ export default function Home() {
               Darragh
             </a>.
           </p>
+          <a
+            href="https://github.com/darraghd493/personal-site"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            View source
+          </a>
         </div>
       </footer>
     </div>

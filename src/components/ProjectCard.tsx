@@ -1,5 +1,5 @@
 import { Project } from "@/Project";
-import { m, motion } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
