@@ -1,9 +1,35 @@
 import { Project } from "@/Project";
+import { m, motion } from "motion/react";
 import Image from "next/image";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
   return (
-    <a key={project.name} className="flex flex-col items-center border border-[var(--foreground-alpha)] bg-[var(--background-alpha)] rounded-lg shadow-[0px_0px_32px_rgba(0,0,0,0.6)] backdrop-blur-[6px] md:max-w-xl hover:scale-105 transition-transform" href={project.url ? project.url : "#" + project.name.replace(/ /g, "-")} id={project.name.replace(/ /g, "-")}>
+    <motion.a
+      key={project.name}
+      className="flex flex-col items-center border border-[var(--foreground-alpha)] bg-[var(--background-alpha)] rounded-lg shadow-[0px_0px_32px_rgba(0,0,0,0.6)] backdrop-blur-[6px] md:max-w-xl"
+      href={project.url ? project.url : "#" + project.name.replace(/ /g, "-")}
+      id={project.name.replace(/ /g, "-")}
+      
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: 0.1 * index,
+        },
+      }}
+      viewport={{
+        margin: "-64px",
+      }}
+      whileHover={{
+        scale: 1.05,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      }}
+    >
       <div>
         {
           project.image && (
@@ -36,7 +62,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           }
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }
 

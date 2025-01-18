@@ -6,9 +6,16 @@ import ProjectCard from "@/components/ProjectCard";
 import { Project, ProjectType } from "@/Project";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { IconType } from "react-icons";
 import { FaYoutube, FaTwitter, FaGithub, FaDiscord, FaChevronDown } from "react-icons/fa6";
 
-const socials = [
+interface Social {
+  name: string;
+  icon: IconType;
+  url: string;
+}
+
+const socials: Social[] = [
   {
     name: "YouTube",
     icon: FaYoutube,
@@ -104,6 +111,7 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -162,11 +170,15 @@ export default function Home() {
           {/* Scroll down for more */}
           <motion.div
               className="absolute bottom-4 animate-bounce"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: isAtTop ? 1 : 0
+              initial={{
+                opacity: 0,
               }}
-              transition={{ duration: 0.2 }} // Adjust the duration for a smoother fade
+              animate={{
+                opacity: isAtTop ? 1 : 0,
+              }}
+              transition={{
+                duration: 0.2,
+              }}
             >
               <a href="#about">
                 <FaChevronDown size={32} />
@@ -174,14 +186,50 @@ export default function Home() {
           </motion.div>
         </div>
         {/* About me */}
-        <div className="flex flex-col gap-4 justify-center items-center py-24" id="about">
+        <motion.div
+          className="flex flex-col gap-4 justify-center items-center py-24"
+          id="about"
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.1,
+            duration: 0.2,
+          }}
+        >
           <h2 className="text-4xl font-bold">About me</h2>
           <p className="text-gray-400 text-center">
             Hello! I&apos;m Darragh - a 16 year old student taking their A-Levels, including Computer Science. 
           </p>
-        </div>
+        </motion.div>
         {/* Projects */}
-        <div className="flex flex-col gap-4 justify-center items-center py-24" id="projects">
+        <motion.div
+          className="flex flex-col gap-4 justify-center items-center py-24"
+          id="projects"
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.1,
+            duration: 0.2,
+          }}
+        >
           <h2 className="text-4xl font-bold">Projects</h2>
           <p className="text-gray-400 text-center">
             Here are some of the projects I&apos;ve worked on.
@@ -189,25 +237,66 @@ export default function Home() {
           <div className="flex flex-row gap-6 flex-wrap justify-center">
           {
             projects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
+              <ProjectCard key={project.name} project={project} index={projects.indexOf(project)} />
             ))
           }
           </div>
-        </div>
+        </motion.div>
         {/* Contact */}
-        <div className="flex flex-col gap-4 justify-center items-center py-24" id="contact">
+        <motion.div
+          className="flex flex-col gap-4 justify-center items-center py-24"
+          id="contact"
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.1,
+            duration: 0.2,
+          }}
+        >
           <h2 className="text-4xl font-bold">Contact</h2>
           <p className="text-gray-400 text-center">
             If you&apos;d like to contact me, you can do so through any of my socials:
           </p>
           {
             socials.map((social) => (
-              <a key={social.name} href={social.url} target="_blank" rel="noreferrer" className="text-gray-400 flex gap-2 items-center">
+              <motion.a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 flex gap-2 items-center"
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.2 + 0.2 * socials.indexOf(social),
+                  },
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: {
+                    delay: 0,
+                  }
+                }}
+                transition={{
+                  duration: 0.2
+                }}
+              >
                 <social.icon size={32} /> - {social.name}
-              </a>
+              </motion.a>
             ))
           }
-        </div>
+        </motion.div>
       </main>
       
       <footer className="row-start-3 gap-6">
