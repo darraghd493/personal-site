@@ -4,6 +4,7 @@ import Background from "@/components/Backgroud";
 import DarkModeButton from "@/components/DarkModeButtion";
 import MotionImage from "@/components/MotionImage";
 import ProjectCard from "@/components/ProjectCard";
+import TopButton from "@/components/TopButton";
 import { Project, ProjectType } from "@/Project";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -126,11 +127,12 @@ export default function Home() {
   return (
     <div>
       <Background />
-      <DarkModeButton style={{
-        position: "fixed",
-        top: "1rem",
-        right: "1rem",
-      }} />
+      <div className="flex gap-4 fixed top-[1rem] right-[1rem]">
+        <TopButton />
+        <DarkModeButton />
+      </div>
+      
+      {/* Main */}
       <main className="container mx-auto">
         {/* Hero */}
         <div className="flex flex-col gap-4 justify-center items-center h-screen">
@@ -165,7 +167,7 @@ export default function Home() {
                 darragh
               </motion.span>
               <br></br>
-              <span className="text-shadow text-[#777] shadow-[#555] dark:text-gray-400 dark:shadow-gray-600">.website</span>
+              <span className="text-shadow text-[#555] shadow-[#444] dark:text-gray-400 dark:shadow-gray-600">.website</span>
             </h1>
           </div>
           <div className="flex gap-2 justify-center items-center dark:text-gray-400">
@@ -245,12 +247,23 @@ export default function Home() {
             Here are some of the projects I&apos;ve worked on.
           </p>
           <div className="flex flex-row gap-6 flex-wrap justify-center">
-          {
-            projects.map((project) => (
-              <ProjectCard key={project.name} project={project} index={projects.indexOf(project)} />
-            ))
-          }
+            {
+              projects.map((project) => (
+                <ProjectCard key={project.name} project={project} index={projects.indexOf(project)} />
+              ))
+            }
           </div>
+          <p className="dark:text-gray-400 text-center pt-4">
+            For more projects, check out my{" "}
+            <a
+              href="https://github.com/darraghd493"
+              target="_blank"
+              rel="noreferrer"
+              className="underline" 
+            >
+              GitHub
+            </a>.
+          </p>
         </motion.div>
         {/* Contact */}
         <motion.div
@@ -309,6 +322,7 @@ export default function Home() {
         </motion.div>
       </main>
       
+      {/* Footer */}
       <footer className="row-start-3 gap-6">
         <div className="flex gap-6 p-2 flex-wrap items-center justify-center">
           <p>
