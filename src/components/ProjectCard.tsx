@@ -1,4 +1,4 @@
-import { Project } from "@/Project";
+import { Project } from "@/type/Project";
 import { motion } from "motion/react";
 import Image from "next/image";
 

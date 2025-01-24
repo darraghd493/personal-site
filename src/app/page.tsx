@@ -5,7 +5,7 @@ import DarkModeButton from "@/components/DarkModeButtion";
 import MotionImage from "@/components/MotionImage";
 import ProjectCard from "@/components/ProjectCard";
 import TopButton from "@/components/TopButton";
-import { Project, ProjectType } from "@/Project";
+import { Project, ProjectType } from "@/type/Project";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
