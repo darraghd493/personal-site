@@ -32,10 +32,14 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
     >
       <div>
         {
-          project.image && (
-            <Image unoptimized src={project.image} className="object-cover w-full rounded-t-lg h-96 md:h-[16rem]
-            " width={512} height={512} alt="" />
-          )
+          project.image && <Image
+            unoptimized
+            src={project.image}
+            className="object-cover w-full rounded-t-lg h-96 md:h-[16rem]"
+            width={512}
+            height={512}
+            alt=""
+          />
         }
 
         <div className="flex flex-col justify-between p-4 leading-normal">
@@ -46,18 +50,50 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
             {project.description.join(" ")}
           </p>
 
-          <p><span className="font-bold">Created:</span> <span className="dark:text-gray-400">{project.date}</span></p>
-          <p><span className="font-bold">Type:</span> <span className="dark:text-gray-400">{project.type}</span></p>
+          <p>
+            <span className="font-bold">
+              Created:
+            </span>
+            {" "}
+            <span className="dark:text-gray-400">
+              {project.date}
+            </span>
+          </p>
+          <p>
+            <span className="font-bold">
+              Type:
+            </span>
+            {" "}
+            <span className="dark:text-gray-400">
+              {project.type}
+            </span>
+          </p>
           
           {
             project.info.languages && (
-              <p><span className="font-bold">Language{project.info.languages.length > 1 ? "s" : ""} used: </span><span className="dark:text-gray-400">{project.info.languages.join(", ")}</span></p>
+              <p>
+                <span className="font-bold">
+                  Language{project.info.languages.length > 1 ? "s" : ""} used:
+                </span>
+                {" "}
+                <span className="dark:text-gray-400">
+                  {project.info.languages.join(", ")}
+                </span>
+              </p>
             )
           }
 
           {
             project.info.frameworks && (
-              <p><span className="font-bold">Framework{project.info.frameworks.length > 1 ? "s" : ""} used: </span><span className="dark:text-gray-400">{project.info.frameworks.join(", ")}</span></p>
+              <p>
+                <span className="font-bold">
+                  Framework{project.info.frameworks.length > 1 ? "s" : ""} used:
+                </span>
+                {" "}
+                <span className="dark:text-gray-400">
+                  {project.info.frameworks.join(", ")}
+                </span>
+              </p>
             )
           }
         </div>
