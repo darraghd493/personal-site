@@ -6,7 +6,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
   return (
     <motion.a
       key={project.name}
-      className="flex flex-col items-center border border-[var(--foreground-alpha)] bg-[var(--background-alpha)] rounded-lg shadow-[0px_0px_32px_rgba(0,0,0,0.6)] backdrop-blur-[6px] md:max-w-xl"
+      className="flex flex-col items-center border border-[var(--foreground-alpha)] bg-[var(--background-alpha)] rounded-lg dark:shadow-[0px_0px_32px_rgba(0,0,0,0.6)] dark:backdrop-blur-[6px] md:max-w-xl"
       href={project.url ? project.url : "#" + project.name.replace(/ /g, "-")}
       id={project.name.replace(/ /g, "-")}
       

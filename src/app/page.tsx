@@ -104,7 +104,7 @@ const projects: Project[] = [
   }
 ];
 
-export default function Home() {
+export default function Page() {
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
