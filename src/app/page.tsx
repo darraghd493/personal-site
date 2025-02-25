@@ -1,11 +1,9 @@
-'use client';
+"use client";
 
 import Background from "@/components/Backgroud";
 import DarkModeButton from "@/components/DarkModeButtion";
 import MotionImage from "@/components/MotionImage";
-import ProjectCard from "@/components/ProjectCard";
 import TopButton from "@/components/TopButton";
-import { Project, ProjectType } from "@/type/Project";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
@@ -39,70 +37,6 @@ const socials: Social[] = [
     url: "https://discord.com/invite/gEtvkkv8sD",
   },
 ]
-
-const projects: Project[] = [
-  {
-    name: "Fentanyl",
-    description: [
-      "A premium Minecraft cheat developed with logevity in mind, featuring a wide range of modules and customisation options.",
-      "Additionally, coinciding with the project, several open-source projects have been released to assist it's development.",
-    ],
-    url: "https://fentanyl.dev",
-    image: "/images/projects/1/1.png",
-    date: "Unknown - Present",
-    type: ProjectType.PAID_PRODUCT,
-    info: {
-      languages: [
-        "Java",
-        "Typescript",
-      ],
-      frameworks: [
-        "LWJGL",
-        "Express",
-        "React",
-        "Next.js",
-      ],
-    },
-  },
-  {
-    name: "darragh's Clicker v1",
-    description: [
-      "An autoclicker designed to bypass heurisitic autoclicker detections within Minecraft anticheats.",
-      "Looking back, the clicker was surpassed expectations, bypassing all major anticheats at the time.",
-      "Reminisents of the algorithm are still used in modern projects of mine today.",
-    ],
-    image: "/images/projects/2/1.png",
-    date: "January 2024",
-    type: ProjectType.LOST_SOURCE,
-    info: {
-      languages: [
-        "C++",
-      ],
-      frameworks: [
-        "Windows API",
-        "ImGui",
-      ],
-    },
-  },
-  {
-    name: "darragh's Clicker v2",
-    description: [
-      "A slowly developed and backburnered rewrite of the darragh's Clicker v1.",
-    ],
-    type: ProjectType.CLOSED_SOURCE,
-    image: "/images/projects/3/1.png",
-    date: "October 2024",
-    info: {
-      languages: [
-        "C++",
-      ],
-      frameworks: [
-        "Windows API",
-        "ImGui",
-      ],
-    },
-  }
-];
 
 export default function Page() {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -199,7 +133,7 @@ export default function Page() {
         </div>
         {/* About me */}
         <motion.div
-          className="flex flex-col gap-4 justify-center items-center py-24"
+          className="flex flex-col gap-4 justify-center items-center py-24 mx-96"
           id="about"
           initial={{
             opacity: 0,
@@ -221,48 +155,13 @@ export default function Page() {
           <p className="dark:text-gray-400 text-center">
             Hello! I&apos;m Darragh - a 16 year old student taking their A-Levels, including Computer Science. 
           </p>
-        </motion.div>
-        {/* Projects */}
-        <motion.div
-          className="flex flex-col gap-4 justify-center items-center py-24"
-          id="projects"
-          initial={{
-            opacity: 0,
-            y: 32,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            delay: 0.1,
-            duration: 0.2,
-          }}
-        >
-          <h2 className="text-4xl font-bold">Projects</h2>
           <p className="dark:text-gray-400 text-center">
-            Here are some of the projects I&apos;ve worked on.
+            I frequently publish projects of mine on GitHub, although a majority of my work is currently private.
           </p>
-          <div className="flex flex-row gap-6 flex-wrap justify-center">
-            {
-              projects.map((project) => (
-                <ProjectCard key={project.name} project={project} index={projects.indexOf(project)} />
-              ))
-            }
-          </div>
-          <p className="dark:text-gray-400 text-center pt-4">
-            For more projects, check out my{" "}
-            <a
-              href="https://github.com/darraghd493"
-              target="_blank"
-              rel="noreferrer"
-              className="underline" 
-            >
-              GitHub
-            </a>.
+          <p className="dark:text-gray-400 text-center">
+            Recent projects of mine consist of my Minecraft client,{" "}
+            <a href="https://fentanyl.dev" target="_blank" rel="noreferrer" className="underline">Fentanyl</a> - named with ironic intent
+            , and my personal obfuscation tool to further my understanding of Java bytecode and how the JVM operates which I plan to continue base my EPQ (extended project qualification) on.
           </p>
         </motion.div>
         {/* Contact */}
