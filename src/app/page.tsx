@@ -69,7 +69,7 @@ export default function Page() {
       {/* Main */}
       <main className="container mx-auto">
         {/* Hero */}
-        <div className="flex flex-col gap-4 justify-center items-center h-screen">
+        <div className="flex flex-col gap-4 justify-center items-center h-screen" id="hero">
           <div className="flex justify-center items-center">
             <MotionImage
               src="/images/profile-icon.png" alt="darragh's profile picture." width={128} height={128}
@@ -107,7 +107,12 @@ export default function Page() {
           <div className="flex gap-2 justify-center items-center dark:text-gray-400">
             {
               socials.map((social) => (
-                <a key={social.name} href={social.url} target="_blank" rel="noreferrer">
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <social.icon size={32} />
                 </a>
               ))
@@ -160,8 +165,57 @@ export default function Page() {
           </p>
           <p className="dark:text-gray-400 text-center">
             Recent projects of mine consist of my Minecraft client,{" "}
-            <a href="https://fentanyl.dev" target="_blank" rel="noreferrer" className="underline">Fentanyl</a> - named with ironic intent
-            , and my personal obfuscation tool to further my understanding of Java bytecode and how the JVM operates which I plan to continue base my EPQ (extended project qualification) on.
+            <a
+              href="https://fentanyl.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Fentanyl
+            </a> - named with ironic intent, and my personal obfuscation tool to further my understanding of Java bytecode and how the JVM operates which I plan to continue base my EPQ (extended project qualification) on.
+          </p>
+        </motion.div>
+        {/* Examples */}
+        <motion.div
+          className="flex flex-col gap-4 justify-center items-center py-24 mx-96"
+          id="examples"
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.1,
+            duration: 0.2,
+          }}
+        >
+          <h2 className="text-4xl font-bold">Examples</h2>
+          <p className="dark:text-gray-400 text-center">
+            You can find examples of my work on my GitHub,{" "}
+            <a
+              href="https://repo.darragh.website" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              personal Maven repository
+            </a>
+            {" "}(build files),{" "}
+            <a
+              href="https://blog.darragh.website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              blog
+            </a>
+            {" "}and my YouTube channel.
           </p>
         </motion.div>
         {/* Contact */}
@@ -194,7 +248,7 @@ export default function Page() {
                 key={social.name}
                 href={social.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer" 
                 className="dark:text-gray-400 flex gap-2 items-center"
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{
@@ -238,9 +292,7 @@ export default function Page() {
           <p>
             Made with ❤️ by{" "}
             <a
-              href="https://darragh.website"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#hero"
               className="underline"
             >
               Darragh
