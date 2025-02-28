@@ -138,7 +138,7 @@ export default function Page() {
         </div>
         {/* About me */}
         <motion.div
-          className="flex flex-col gap-4 justify-center items-center py-24 mx-96"
+          className="flex flex-col gap-4 justify-center items-center py-24 mx-12 lg:mx-96"
           id="about"
           initial={{
             opacity: 0,
@@ -177,7 +177,7 @@ export default function Page() {
         </motion.div>
         {/* Examples */}
         <motion.div
-          className="flex flex-col gap-4 justify-center items-center py-24 mx-96"
+          className="flex flex-col gap-4 justify-center items-center py-24 mx-12 lg:mx-96"
           id="examples"
           initial={{
             opacity: 0,
@@ -220,7 +220,7 @@ export default function Page() {
         </motion.div>
         {/* Contact */}
         <motion.div
-          className="flex flex-col gap-4 justify-center items-center py-24"
+          className="flex flex-col gap-4 justify-center items-center py-24 mx-12 lg:mx-96"
           id="contact"
           initial={{
             opacity: 0,
