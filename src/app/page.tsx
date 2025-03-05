@@ -164,15 +164,7 @@ export default function Page() {
             I frequently publish projects of mine on GitHub, although a majority of my work is currently private.
           </p>
           <p className="dark:text-gray-400 text-center">
-            Recent projects of mine consist of my Minecraft client,{" "}
-            <a
-              href="https://fentanyl.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Fentanyl
-            </a> - named with ironic intent, and my personal obfuscation tool to further my understanding of Java bytecode and how the JVM operates which I plan to continue base my EPQ (extended project qualification) on.
+            Recent projects of mine consist of my Minecraft client, and my personal obfuscation tool to further my understanding of Java bytecode and how the JVM operates which I plan to continue base my EPQ (extended project qualification) on.
           </p>
         </motion.div>
         {/* Examples */}
