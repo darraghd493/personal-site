@@ -158,7 +158,7 @@ export default function Page() {
         >
           <h2 className="text-4xl font-bold">About me</h2>
           <p className="dark:text-gray-400 text-center">
-            Hello! I&apos;m Darragh - a 16 year old student taking their A-Levels, including Computer Science. 
+            Hello! I&apos;m Darragh - a 17 year old student taking their A-Levels, including Computer Science. 
           </p>
           <p className="dark:text-gray-400 text-center">
             I frequently publish projects of mine on GitHub, although a majority of my work is currently private.
