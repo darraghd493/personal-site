@@ -16,37 +16,37 @@ const projects: Project[] = [
         title: "Portfolio Website",
         description: "My portfolio built with Next.js, Tailwind CSS, and Framer Motion.",
         link: "https://darragh.website",
-        icons: [<Globe />, <Code />],
+        icons: [<Globe key="1" />, <Code key="2" />],
     },
     {
         title: "Ether",
         description: "A series of custom pentesting tools for Minecraft anticheats.",
         link: "https://ether.beer",
-        icons: [<AppWindowIcon />, <CreditCard />],
+        icons: [<AppWindowIcon key="1" />, <CreditCard key="2" />],
     },
     {
         title: "lmc-interpreter-web",
         description: "A web-ui for my performant Little Man Computing interpreter.",
         link: "https://darraghd493.github.io/lmc-interpreter-web/",
-        icons: [<Globe />, <Code />],
+        icons: [<Globe key="1" />, <Code key="2" />],
     },
     {
         title: "java-tiny-basic",
         description: "A Java implementation of the Tiny BASIC programming language.",
         link: "https://github.com/darraghd493/java-tiny-basic",
-        icons: [<Github />, <Globe />],
+        icons: [<Github key="1" />, <Globe key="2" />],
     },
     {
         title: "event-bus",
         description: "A lightweight event bus library for Java applications.",
         link: "https://github.com/darraghd493/event-bus",
-        icons: [<Github />, <Code />],
+        icons: [<Github key="1" />, <Code key="2" />],
     },
     {
         title: "msauth",
         description: "A simple Microsoft authentication library for Minecraft.",
         link: "https://github.com/darraghd493/msauth",
-        icons: [<Github />, <Code />],
+        icons: [<Github key="1" />, <Code key="2" />],
     }
 ];
 
