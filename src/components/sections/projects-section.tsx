@@ -80,7 +80,7 @@ export default function ProjectsSection() {
                     <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                         {projects.map((project, i) => (
                             <motion.div
-                                key={i}
+                                key={project.title}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 whileHover={{ scale: 1.05 }}
@@ -98,7 +98,7 @@ export default function ProjectsSection() {
                                 <div className="flex items-center justify-between">
                                     <div className="flex space-x-2 text-neutral-300">
                                         {project.icons.map((icon, idx) => (
-                                            <span key={idx} className="w-5 h-5">{icon}</span>
+                                            <span key={`icon-${project.title}-${idx}`} className="w-5 h-5">{icon}</span>
                                         ))}
                                     </div>
                                     <a

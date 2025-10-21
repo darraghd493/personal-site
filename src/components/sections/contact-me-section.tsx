@@ -36,7 +36,7 @@ export default function ContactMeSection() {
                     viewport={{ once: true }}
                     className="space-y-6 text-neutral-300 leading-relaxed text-lg sm:text-xl md:text-2xl mx-auto md:mx-0"
                 >
-                    I'm always open to discussing new projects, or opportunities to be part of your visions.
+                    I&apos;m always open to discussing new projects, or opportunities to be part of your visions.
                     Feel free to reach out to me through any of the platforms below!
                 </motion.p>
                 {/* Contact Links */}
