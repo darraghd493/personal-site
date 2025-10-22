@@ -13,13 +13,13 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Portfolio Website",
+        title: "darragh.website",
         description: "My portfolio built with Next.js, Tailwind CSS, and Framer Motion.",
         link: "https://darragh.website",
         icons: [<Globe key="1" />, <Code key="2" />],
     },
     {
-        title: "Ether",
+        title: "ether.beer",
         description: "A series of custom pentesting tools for Minecraft anticheats.",
         link: "https://ether.beer",
         icons: [<AppWindowIcon key="1" />, <CreditCard key="2" />],
