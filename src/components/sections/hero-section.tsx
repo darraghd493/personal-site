@@ -8,7 +8,7 @@ function HeroContent() {
       <h1 className="relative z-0 font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
         <motion.span
           role="img"
-          className="absolute -top-14 sm:-left-10 md:-left-20 md:-top-16 origin-[70%_70%] -z-1 hidden lg:inline cursor-pointer"
+          className="absolute -top-14 sm:-left-10 md:-left-20 md:-top-16 origin-[70%_70%] -z-1 hidden lg:inline"
           animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
           transition={{
             duration: 2,
