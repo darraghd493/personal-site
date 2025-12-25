@@ -7,7 +7,7 @@ export default function MainFooter() {
                 &copy; {new Date().getFullYear()} darragh.website. All rights reserved.
             </p>
             <p className="text-sm text-center text-white/50">
-                Built with Next.js, Tailwind CSS, and Framer Motion. Made with &#10084;.
+                Made with &#10084;.
             </p>
             <a
                 href="https://github.com/darraghd493/personal-site"
