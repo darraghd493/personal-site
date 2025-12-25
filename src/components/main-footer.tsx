@@ -6,9 +6,6 @@ export default function MainFooter() {
             <p className="text-sm text-center text-white/50">
                 &copy; {new Date().getFullYear()} darragh.website. All rights reserved.
             </p>
-            <p className="text-sm text-center text-white/50">
-                Made with &#10084;.
-            </p>
             <a
                 href="https://github.com/darraghd493/personal-site"
                 target="_blank"
