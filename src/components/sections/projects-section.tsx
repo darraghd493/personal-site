@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import SectionHeading from "../section-heading";
 import { Github, Globe, Code, ArrowRight, CreditCard, AppWindowIcon } from "lucide-react";
 
@@ -9,7 +9,7 @@ const fadeInUp = {
     visible: { opacity: 1, y: 0 },
 };
 
-const baseTransition = { duration: 0.8, ease: "easeOut" };
+const baseTransition = { duration: 0.8, ease: easeInOut };
 
 interface Project {
     title: string;

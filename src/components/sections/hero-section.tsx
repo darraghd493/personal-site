@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 };
 
-const baseTransition = { duration: 0.8, ease: "easeOut" };
+const baseTransition = { duration: 0.8, ease: easeInOut };
 
 function HeroContent() {
   return (
