@@ -3,18 +3,26 @@
 import { motion } from "framer-motion";
 import SectionHeading from "../section-heading";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+};
+
+const baseTransition = { duration: 0.8, ease: "easeOut" };
+
 export default function AboutSection() {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center bg-neutral-950 text-white border-t border-white/10 overflow-hidden">
+        <section className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a1118] via-[#0c1620] to-[#0f1f29] text-white border-t border-white/10 overflow-hidden">
             <div className="container px-6 py-20 md:px-12 lg:px-20 max-w-5xl relative z-10 text-center md:text-left space-y-10">
                 <SectionHeading text="About Me" />
                 {/* Content */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.8 }}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ ...baseTransition, delay: 0.15 }}
                     viewport={{ once: true }}
-                    className="space-y-6 text-neutral-300 leading-relaxed text-lg sm:text-xl md:text-2xl"
+                    className="space-y-6 text-slate-200/90 leading-relaxed text-lg sm:text-xl md:text-2xl"
                 >
                     <p>
                         I have had a long-lasting passion for technology and software development

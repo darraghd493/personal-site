@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import SectionHeading from "../section-heading";
 import { Github, Globe, Code, ArrowRight, CreditCard, AppWindowIcon } from "lucide-react";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+};
+
+const baseTransition = { duration: 0.8, ease: "easeOut" };
+
 interface Project {
     title: string;
     description: string;
@@ -52,12 +59,12 @@ const projects: Project[] = [
 
 export default function ProjectsSection() {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center bg-neutral-900/50 text-white overflow-hidden border-t border-white/10">
+        <section className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0f1f29] via-[#0c1620] to-[#0a1118] text-white overflow-hidden border-t border-white/10">
             {/* More Background Blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-[-10rem] right-[-10rem] w-[25rem] h-[25rem] bg-blue-600/20 rounded-full blur-3xl animate-pulse delay-500" />
-                <div className="absolute top-[40%] left-[60%] w-[20rem] h-[20rem] bg-fuchsia-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+                <div className="absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-[#61b3c5]/18 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-[-10rem] right-[-10rem] w-[25rem] h-[25rem] bg-sky-500/18 rounded-full blur-3xl animate-pulse delay-500" />
+                <div className="absolute top-[40%] left-[60%] w-[20rem] h-[20rem] bg-cyan-400/12 rounded-full blur-3xl animate-pulse delay-700" />
             </div>
 
             <div className="relative z-10 container px-6 py-20 md:px-12 lg:px-20 max-w-5xl md:text-left">
@@ -66,9 +73,10 @@ export default function ProjectsSection() {
 
                     {/* Intro text */}
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.8 }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={{ ...baseTransition, delay: 0.15 }}
                         viewport={{ once: true }}
                         className="space-y-6 text-neutral-300 leading-relaxed text-lg sm:text-xl md:text-2xl mx-auto md:mx-0"
                     >
@@ -81,17 +89,18 @@ export default function ProjectsSection() {
                         {projects.map((project, i) => (
                             <motion.div
                                 key={project.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                                 transition={{
-                                    opacity: { delay: i * 0.2, duration: 0.8 },
+                                    ...baseTransition,
+                                    delay: i * 0.15,
                                     scale: { type: "spring", stiffness: 300 },
-                                    y: { delay: i * 0.2, duration: 0.8 },
                                 }}
                                 viewport={{ once: true }}
-                                className="bg-neutral-800/50 border border-white/10 backdrop-blur-sm rounded-2xl p-6 w-[280px] text-left shadow-lg"
+                                className="bg-[#0f1f29]/80 border border-white/10 backdrop-blur-sm rounded-2xl p-6 w-[280px] text-left shadow-lg"
                             >
                                 <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
                                 <p className="text-sm text-neutral-400 mb-4">{project.description}</p>
@@ -105,37 +114,13 @@ export default function ProjectsSection() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-sm text-purple-400 hover:underline"
+                                        className="text-sm text-[#61b3c5] hover:underline"
                                     >
                                         View <ArrowRight className="inline-block w-4 h-4 ml-1" />
                                     </a>
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
-
-                    <div className="mt-10 text-center">
-                        <motion.a
-                            href="https://github.com/darraghd493"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            whileHover={{
-                                scale: 1.05,
-                                backgroundColor: "#a855f7", // purple-400
-                                color: "#171717", // neutral-900
-                            }}
-                            whileTap={{ scale: 0.98 }}
-                            transition={{
-                                opacity: { delay: 0.2, duration: 0.8 },
-                                scale: { type: "spring", stiffness: 300 },
-                                y: { delay: 0.2, duration: 0.8 },
-                            }}
-                            className="inline-block px-6 py-3 border border-purple-400 text-purple-400 rounded-full"
-                        >
-                            View More on GitHub
-                        </motion.a>
                     </div>
                 </div>
             </div>

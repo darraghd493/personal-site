@@ -2,6 +2,13 @@
 
 import { motion } from "framer-motion";
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const baseTransition = { duration: 0.8, ease: "easeOut" };
+
 function HeroContent() {
   return (
     <div>
@@ -32,20 +39,22 @@ function HeroContent() {
 
 export default function HeroSection() {
     return (
-        <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-neutral-950 to-neutral-900 text-white overflow-hidden relative py-20">
+        <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a1118] via-[#0c1620] to-[#0f1f29] text-white overflow-hidden relative py-20">
             {/* Background Blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-48 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-[-200px] right-[15%] w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-700" />
-                <div className="absolute top-[30%] left-[10%] w-[350px] h-[350px] bg-emerald-400/10 rounded-full blur-3xl animate-pulse delay-500" />
+            <div className="absolute -top-48 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#61b3c5]/18 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-[-200px] right-[15%] w-[500px] h-[500px] bg-sky-500/16 rounded-full blur-3xl animate-pulse delay-700" />
+            <div className="absolute top-[30%] left-[10%] w-[350px] h-[350px] bg-cyan-400/12 rounded-full blur-3xl animate-pulse delay-500" />
             </div>
 
             {/* Content */}
             <div className="container px-6 md:px-12 lg:px-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                transition={baseTransition}
+                viewport={{ once: true }}
                     className="relative flex flex-col items-center md:items-start text-center md:text-left"
                 >
                     <HeroContent />

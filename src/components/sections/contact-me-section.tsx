@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import SectionHeading from "../section-heading";
 import { Github, Mail } from "lucide-react";
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+};
+
+const baseTransition = { duration: 0.8, ease: "easeOut" };
+
 interface Contact {
     name: string;
     link: string;
@@ -25,14 +32,15 @@ const contacts: Contact[] = [
 
 export default function ContactMeSection() {
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center bg-neutral-950 text-white border-t border-white/10 overflow-hidden">
+        <section className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a1118] via-[#0c1620] to-[#0f1f29] text-white border-t border-white/10 overflow-hidden">
             <div className="container px-6 py-20 md:px-12 lg:px-20 max-w-5xl relative z-10 text-center md:text-left space-y-10">
                 <SectionHeading text="Contact Me" />
                 {/* Intro text */}
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.8 }}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ ...baseTransition, delay: 0.15 }}
                     viewport={{ once: true }}
                     className="space-y-6 text-neutral-300 leading-relaxed text-lg sm:text-xl md:text-2xl mx-auto md:mx-0"
                 >
@@ -44,25 +52,24 @@ export default function ContactMeSection() {
                     {contacts.map((contact, i) => (
                         <motion.a
                             key={i}
-                            href={
-                                contact.link
-                            }
+                            href={contact.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            variants={fadeInUp}
+                            initial="hidden"
+                            whileInView="visible"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
                             transition={{
-                                opacity: { delay: i * 0.2, duration: 0.8 },
-                                scale: { type: "spring", stiffness: 400, damping: 20 }, // the damping gives more of a "serious" feel
-                                y: { delay: i * 0.2, duration: 0.8 },
+                                ...baseTransition,
+                                delay: 0.15,
+                                scale: { type: "spring", stiffness: 400, damping: 20 },
                             }}
                             viewport={{ once: true }}
-                            className="flex items-center space-x-3 bg-purple-600/20 hover:bg-purple-600/30 transition-colors border border-purple-400/20 hover:border-purple-400/40 rounded-lg px-5 py-3 justify-center w-full sm:w-auto"
+                            className="flex items-center space-x-3 bg-[#0f1f29]/80 hover:bg-[#61b3c5]/20 transition-colors border border-[#61b3c5]/30 hover:border-[#61b3c5]/60 rounded-lg px-5 py-3 justify-center w-full sm:w-auto"
                         >
-                            <span className="w-5 h-5 text-purple-400">{contact.icon}</span>
-                            <span className="text-purple-200 font-medium">{contact.name}</span>
+                            <span className="w-5 h-5 text-[#8bd2e0]">{contact.icon}</span>
+                            <span className="text-[#d8f0f6] font-medium">{contact.name}</span>
                         </motion.a>
                     ))}
                 </div>
