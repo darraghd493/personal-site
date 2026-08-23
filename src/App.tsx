@@ -40,6 +40,7 @@ export default function App() {
   useEffect(() => {
     const handlePointerMove = (e: PointerEvent) => {
       if (!isDragging) return;
+      if (e.pointerType !== 'mouse') return;
       const deltaX = e.clientX - dragStartPos.current.startX;
       const deltaY = e.clientY - dragStartPos.current.startY;
       setPosition({
