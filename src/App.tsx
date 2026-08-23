@@ -25,8 +25,8 @@ export default function App() {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
   };
 
-  const handlePointerDown = (e) => {
-    if (isMaximized || e.target.closest('button')) return;
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (isMaximized || (e.target as HTMLElement).closest('button')) return;
     
     setIsDragging(true);
     dragStartPos.current = {
@@ -38,7 +38,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    const handlePointerMove = (e) => {
+    const handlePointerMove = (e: PointerEvent) => {
       if (!isDragging) return;
       const deltaX = e.clientX - dragStartPos.current.startX;
       const deltaY = e.clientY - dragStartPos.current.startY;
