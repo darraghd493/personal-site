@@ -37,7 +37,7 @@ export default function App() {
             Projects
           </h2>
           <p className="text-lg md:text-xl border-l-4 border-blue-600 pl-6 py-2 bg-neutral-900">
-            I've worked on a variety of projects — here are some of my personal highlights that showcase my technical and creative skills.
+            I've worked on a variety of projects — here are some of my personal highlights.
           </p>
 
           <div className="flex flex-col space-y-16 mt-16">
